@@ -8,20 +8,14 @@
             <h1><a href="/">Anna Fijarczyk</a></h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>published: 23.12.2023, 14:48</time>
-            <h2><a href="">Research topics</a></h2>
-            <p>1. Hybridization</p>
-            <p>2. Adaptation</p>
-            <p>3. Balancing selection</p>
-            <p>4. Fungal pathogens</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <time>published: {{ post.published_date }}</time>
         </article>
+        {% endfor %}
 
-        <article>
-            <time>published: 23.12.2023, 14:48</time>
-            <h2><a href="">Coding</a></h2>
-            <p>1. Scripts and workflows</p>
-            <p>2. Courses</p>
-        </article>
+
     </body>
 </html>
